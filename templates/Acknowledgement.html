@@ -1,0 +1,69 @@
+<html>
+   <head>
+      <title>success</title>
+   </head>
+   <style>
+    table {
+    width: 33.3%;
+    float: left;
+    }
+    td { width:42px; height:42px; }
+   </style>
+   <body>
+    <form action = "/success" method = "post" enctype="multipart/form-data">  
+        <input type="file" name="file" />  
+        <input type = "submit" value="Upload">  
+    </form>  
+    
+      <div id="table_1">
+      <table cellspacing="2" cellpadding="5"  >
+        <thead>
+          <tr>
+            <th></th>
+            <th>audd</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for key, value in result_audd.items() %}
+         <tr>
+             <td> {{ key }} </td>
+             <td> {{ value }} </td>
+         </tr>
+         {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div id="table_2">
+      <table  cellspacing="2" cellpadding="5"  >
+        <thead>
+          <tr>
+            <th>genius</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for key, value in result_genius.items() %}
+         <tr>
+             <td> {{ value }} </td>
+         </tr>
+         {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div id="table_3">
+        <table cellspacing="2" cellpadding="5"  >
+          <thead>
+            <tr>
+              <th>discogs</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for key, value in result_discogs.items() %}
+           <tr>
+               <td> {{ value }} </td>
+           </tr>
+           {% endfor %}
+          </tbody>
+        </table>
+      </div>
+   </body>
+</html>
