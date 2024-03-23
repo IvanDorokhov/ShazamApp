@@ -1,0 +1,20 @@
+kind: pipeline
+name: drone-build
+
+steps:
+  - name: install-python-dependencies
+    image: python:3.8
+    commands:
+      - pip install -r requirements.txt
+
+  - name: run-app
+    image: python:3.8
+    commands:
+      - python app.py
+trigger:
+  branch:
+    - main
+    - master
+
+settings:
+  build_timeout: 1h
